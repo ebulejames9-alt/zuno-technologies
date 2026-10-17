@@ -1,0 +1,44 @@
+# ZUNO Technologies — Render Blueprint (Infrastructure as Code)
+#
+# HOW TO USE (free + permanent, no credit card):
+#   1. Push this project to a GitHub repository.
+#   2. In Render:  New +  ->  Blueprint  ->  pick the repository.
+#   3. When prompted, paste your free Neon/Supabase Postgres URL into DATABASE_URL
+#      and your admin password into ADMIN_PASSWORD.  Click "Apply".
+#
+# WHY AN EXTERNAL POSTGRES:
+#   Render's FREE web service has an ephemeral filesystem, and Render's own free
+#   Postgres expires after 30 days. A free Neon (or Supabase) Postgres never
+#   expires, so the website content and uploads stay permanent.
+#
+# WITHOUT DATABASE_URL the app still runs, but it falls back to a local SQLite
+# file on the ephemeral disk — content would reset on every redeploy. Set
+# DATABASE_URL for a truly permanent site.
+services:
+  - type: web
+    name: zuno-technologies
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: JWT_SECRET
+        generateValue: true            # Render generates a strong secret automatically
+      - key: ADMIN_EMAIL
+        value: ebulejames9@gmail.com
+      - key: ADMIN_PASSWORD
+        sync: false                    # set in the Render dashboard (kept secret)
+      - key: DATABASE_URL
+        sync: false                    # paste your free Neon/Supabase Postgres URL
+      - key: ZUNO_DATA_DIR
+        value: /data
+    # --- Optional PAID add-ons (not required) ---------------------------------
+    # Attach a persistent disk if you prefer to keep SQLite + uploads on Render
+    # instead of using an external Postgres:
+    # disk:
+    #   name: zuno-data
+    #   mountPath: /data
+    #   sizeGB: 1

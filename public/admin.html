@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- ZUNO Administrator Dashboard -->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ZUNO Admin — Dashboard</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/svg+xml" href="/assets/zuno-favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/dashboard.css">
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+</head>
+<body>
+
+<!-- ======================= LOGIN ======================= -->
+<div class="auth-wrap" id="loginView">
+  <div class="auth-card">
+    <div class="auth-logo">
+      <img src="/assets/zuno-logo.svg" alt="ZUNO">
+      <span class="sub">Administrator</span>
+    </div>
+    <h1>Admin Sign In</h1>
+    <p class="lead">Secure access to the Zuno Technologies management platform.</p>
+    <div class="alert" id="loginAlert"></div>
+    <form id="loginForm">
+      <div class="field"><label for="email">Email address</label>
+        <input class="input" id="email" type="email" autocomplete="username" required placeholder="you@example.com"></div>
+      <div class="field"><label for="password">Password</label>
+        <div style="position:relative">
+          <input class="input" id="password" type="password" autocomplete="current-password" required placeholder="••••••••" style="padding-right:44px">
+          <button type="button" id="togglePw" aria-label="Show password" style="position:absolute;right:8px;top:50%;transform:translateY(-50%);background:transparent;border:0;color:var(--violet-soft);cursor:pointer;font-size:.78rem;font-weight:700">SHOW</button>
+        </div>
+      </div>
+      <button class="btn btn-primary btn-block" type="submit" id="loginBtn">Sign In</button>
+    </form>
+    <div class="auth-foot">Protected area · Authorised administrators only</div>
+  </div>
+</div>
+
+<!-- ======================= APP ======================= -->
+<div class="app hidden" id="appView">
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <img src="/assets/zuno-logo.svg" alt="ZUNO">
+      <span class="bt"><b>ZUNO</b><span>Admin</span></span>
+    </div>
+    <div class="nav-scroll" id="navScroll"></div>
+    <div class="sidebar-foot">
+      <button class="nav-item" id="collapseBtn" title="Collapse sidebar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <span>Collapse</span>
+      </button>
+      <button class="nav-item" id="logoutBtn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 12H4m0 0 3-3m-3 3 3 3M14 4h4a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-4"/></svg>
+        <span>Logout</span>
+      </button>
+    </div>
+  </aside>
+  <div class="overlay" id="overlay"></div>
+  <div class="main">
+    <div class="topbar">
+      <button class="hamburger" id="hamburger" aria-label="Menu">☰</button>
+      <h2 id="pageTitle">Overview</h2>
+      <div class="spacer"></div>
+      <div class="who"><b id="adminName">Administrator</b><span id="adminEmail"></span></div>
+      <div class="avatar" id="avatar">Z</div>
+    </div>
+    <div class="content" id="content"></div>
+  </div>
+</div>
+
+<div class="modal" id="modal"><div class="modal-card" id="modalCard"></div></div>
+<div class="toasts" id="toasts"></div>
+
+<script src="/js/admin.js" defer></script>
+</body>
+</html>

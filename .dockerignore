@@ -1,0 +1,11 @@
+node_modules
+npm-debug.log
+data
+uploads
+dist
+.git
+.gitignore
+.env
+*.log
+*.md
+.screenshots

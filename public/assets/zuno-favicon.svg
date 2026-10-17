@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" role="img" aria-label="ZUNO">
+  <defs>
+    <linearGradient id="fg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8B5CF6"/>
+      <stop offset="1" stop-color="#22D3EE"/>
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="28" fill="#0A0A12"/>
+  <path d="M34 34 h60 a8 8 0 0 1 8 8 v4 a8 8 0 0 1 -2.4 5.7 L62 96 h32 a8 8 0 0 1 8 8 v2 a8 8 0 0 1 -8 8 H34 a8 8 0 0 1 -8 -8 v-4 a8 8 0 0 1 2.4 -5.7 L66 52 H34 a8 8 0 0 1 -8 -8 v-2 a8 8 0 0 1 8 -8 Z"
+    fill="url(#fg)"/>
+</svg>

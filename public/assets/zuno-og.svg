@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="Zuno Technologies — Ideas Into Reality">
+  <defs>
+    <radialGradient id="bg" cx="0.25" cy="0.2" r="1">
+      <stop offset="0" stop-color="#1a0b33"/>
+      <stop offset="0.55" stop-color="#0A0A12"/>
+      <stop offset="1" stop-color="#050509"/>
+    </radialGradient>
+    <linearGradient id="og" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8B5CF6"/>
+      <stop offset="1" stop-color="#22D3EE"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1010" cy="150" r="230" fill="#8B5CF6" opacity="0.16"/>
+  <circle cx="180" cy="540" r="200" fill="#22D3EE" opacity="0.12"/>
+  <g transform="translate(90,120) scale(0.9)">
+    <path d="M30 22 h72 a10 10 0 0 1 10 10 v6 a10 10 0 0 1 -3 7.2 L63 92 h39 a10 10 0 0 1 10 10 v6 a10 10 0 0 1 -10 10 H30 a10 10 0 0 1 -10 -10 v-6 a10 10 0 0 1 3 -7.2 L69 48 H30 a10 10 0 0 1 -10 -10 v-6 a10 10 0 0 1 10 -10 Z" fill="url(#og)"/>
+  </g>
+  <text x="90" y="330" font-family="'Segoe UI',Arial,sans-serif" font-size="96" font-weight="800" fill="#F5F3FF">ZUNO TECHNOLOGIES</text>
+  <text x="94" y="410" font-family="'Segoe UI',Arial,sans-serif" font-size="46" font-weight="600" letter-spacing="3" fill="#A78BFA">Ideas Into Reality.</text>
+  <text x="94" y="500" font-family="'Segoe UI',Arial,sans-serif" font-size="30" fill="#C4B5FD">Building tomorrow. Today.</text>
+</svg>

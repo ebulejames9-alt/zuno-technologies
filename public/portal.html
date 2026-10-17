@@ -1,0 +1,95 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ZUNO Customer Portal</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/svg+xml" href="/assets/zuno-favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/dashboard.css">
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+</head>
+<body>
+
+<!-- ===================== AUTH ===================== -->
+<div class="auth-wrap" id="authView">
+  <div class="auth-card">
+    <div class="auth-logo">
+      <img src="/assets/zuno-logo.svg" alt="ZUNO">
+      <span class="sub">Customer Portal</span>
+    </div>
+    <div class="alert" id="authAlert"></div>
+
+    <!-- Login -->
+    <div id="loginPane">
+      <h1>Welcome back</h1>
+      <p class="lead">Sign in to manage your account and support requests.</p>
+      <form id="loginForm">
+        <div class="field"><label for="lEmail">Email address</label><input class="input" id="lEmail" type="email" autocomplete="username" required></div>
+        <div class="field"><label for="lPassword">Password</label>
+          <div style="position:relative">
+            <input class="input" id="lPassword" type="password" autocomplete="current-password" required style="padding-right:44px">
+            <button type="button" id="toggleL" aria-label="Show password" style="position:absolute;right:8px;top:50%;transform:translateY(-50%);background:transparent;border:0;color:var(--violet-soft);cursor:pointer;font-size:.78rem;font-weight:700">SHOW</button>
+          </div>
+        </div>
+        <button class="btn btn-primary btn-block" type="submit" id="loginBtn">Sign In</button>
+      </form>
+      <div class="auth-foot">New to Zuno? <a href="#" id="goRegister">Create an account</a></div>
+    </div>
+
+    <!-- Register -->
+    <div id="registerPane" class="hidden">
+      <h1>Create your account</h1>
+      <p class="lead">Register to submit support requests and manage your profile.</p>
+      <form id="registerForm">
+        <div class="field"><label for="rName">Full name</label><input class="input" id="rName" autocomplete="name" required></div>
+        <div class="field"><label for="rEmail">Email address</label><input class="input" id="rEmail" type="email" autocomplete="email" required></div>
+        <div class="field"><label for="rPhone">Phone (optional)</label><input class="input" id="rPhone" autocomplete="tel"></div>
+        <div class="field"><label for="rPassword">Password</label>
+          <div style="position:relative">
+            <input class="input" id="rPassword" type="password" autocomplete="new-password" required style="padding-right:44px">
+            <button type="button" id="toggleR" aria-label="Show password" style="position:absolute;right:8px;top:50%;transform:translateY(-50%);background:transparent;border:0;color:var(--violet-soft);cursor:pointer;font-size:.78rem;font-weight:700">SHOW</button>
+          </div>
+          <span class="hint">At least 8 characters, with letters and numbers.</span>
+        </div>
+        <button class="btn btn-primary btn-block" type="submit" id="regBtn">Create Account</button>
+      </form>
+      <div class="auth-foot">Already have an account? <a href="#" id="goLogin">Sign in</a></div>
+    </div>
+
+    <div class="auth-foot"><a href="/">← Back to Zuno Technologies</a></div>
+  </div>
+</div>
+
+<!-- ===================== APP ===================== -->
+<div class="app hidden" id="appView">
+  <aside class="sidebar" id="sidebar">
+    <div class="brand"><img src="/assets/zuno-logo.svg" alt="ZUNO"><span class="bt"><b>ZUNO</b><span>Portal</span></span></div>
+    <div class="nav-scroll" id="navScroll"></div>
+    <div class="sidebar-foot">
+      <button class="nav-item" id="logoutBtn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 12H4m0 0 3-3m-3 3 3 3M14 4h4a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-4"/></svg>
+        <span>Logout</span>
+      </button>
+    </div>
+  </aside>
+  <div class="overlay" id="overlay"></div>
+  <div class="main">
+    <div class="topbar">
+      <button class="hamburger" id="hamburger" aria-label="Menu">☰</button>
+      <h2 id="pageTitle">Dashboard</h2>
+      <div class="spacer"></div>
+      <div class="who"><b id="custName">Customer</b><span id="custEmail"></span></div>
+      <div class="avatar" id="avatar">Z</div>
+    </div>
+    <div class="content" id="content"></div>
+  </div>
+</div>
+
+<div class="modal" id="modal"><div class="modal-card" id="modalCard"></div></div>
+<div class="toasts" id="toasts"></div>
+
+<script src="/js/portal.js" defer></script>
+</body>
+</html>

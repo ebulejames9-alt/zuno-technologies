@@ -1,0 +1,33 @@
+# ZUNO Technologies — Fly.io configuration
+# Fly volumes are persistent, so SQLite + uploads survive restarts.
+# Deploy:  fly launch --no-deploy   (uses this file + Dockerfile)
+#          fly volumes create zuno_data --size 1
+#          fly secrets set JWT_SECRET=... ADMIN_PASSWORD=...
+#          fly deploy
+# Note: Fly.io no longer has a free tier for new accounts (a card is required).
+app = "zuno-technologies"
+primary_region = "iad"
+
+[build]
+  dockerfile = "Dockerfile"
+
+[env]
+  PORT = "3000"
+  NODE_ENV = "production"
+  ZUNO_DATA_DIR = "/data"
+  ADMIN_EMAIL = "ebulejames9@gmail.com"
+
+[[mounts]]
+  source = "zuno_data"
+  destination = "/data"
+
+[http_service]
+  internal_port = 3000
+  force_https = true
+  auto_stop_machines = "stop"
+  auto_start_machines = true
+  min_machines_running = 0
+
+[[vm]]
+  size = "shared-cpu-1x"
+  memory = "512mb"
